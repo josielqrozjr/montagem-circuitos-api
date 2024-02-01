@@ -74,10 +74,7 @@ const videoAulas = [
 
 // Rota para obter os dados combinados
 app.get('/', (req, res) => {
-    const combinedData = {
-        docs_pdf: docsPdf,
-        video_aulas: videoAulas
-    };
+    const combinedData = {docs_pdf, video_aulas};
 
     res.json(combinedData);
 });
