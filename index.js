@@ -1,15 +1,13 @@
-import express from "express";
-import cors from "cors";
-
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
-const docs_pdf = [
+const docsPdf = [
     {
         id: 1,
         titulo_rel: 'Guia de Simbologia',
@@ -32,7 +30,7 @@ const docs_pdf = [
     }
 ];
 
-const video_aulas = [
+const videoAulas = [
     {
         id: 1,
         titulo_video: 'Simulação do alimentador de peças',
@@ -81,4 +79,6 @@ app.get('/', (req, res) => {
 });
 
 // Inicie o servidor
-app.listen(port);
+app.listen(port, () => {
+    console.log(`Servidor iniciado na porta ${port}`);
+});
