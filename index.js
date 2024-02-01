@@ -9,7 +9,7 @@ const port = process.env.PORT || 9001;```
 
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000; // Use a porta fornecida pelo Vercel
+const port = process.env.PORT || 9001; // Use a porta fornecida pelo Vercel
 
 const docsPdf = [
     {
