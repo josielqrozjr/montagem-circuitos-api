@@ -1,11 +1,15 @@
-const express = require("express");
+```const express = require("express");
 const cors = require("cors");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-const port = process.env.PORT || 9001;
+const port = process.env.PORT || 9001;```
+
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000; // Use a porta fornecida pelo Vercel
 
 const docsPdf = [
     {
@@ -82,3 +86,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor iniciado na porta ${port}`);
 });
+
+module.exports = app; // Exporta o app para a função do Vercel
