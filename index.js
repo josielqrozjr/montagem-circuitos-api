@@ -79,16 +79,15 @@ app.get('/', (req, res) => {
     res.json(combinedData);
 });
 
+// Inicie o servidor
+app.listen(port, () => {
+    console.log(`Servidor iniciado na porta ${port}`);
+});
+
 // Tratamento de erros
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Algo deu errado!');
   });
-  
-
-// Inicie o servidor
-app.listen(port, () => {
-    console.log(`Servidor iniciado na porta ${port}`);
-});
 
 module.exports = app; // Exporta o app para a função do Vercel
