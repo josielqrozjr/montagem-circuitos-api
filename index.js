@@ -1,12 +1,3 @@
-```const express = require("express");
-const cors = require("cors");
-
-const app = express();
-app.use(express.json());
-app.use(cors());
-
-const port = process.env.PORT || 9001;```
-
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 9001; // Use a porta fornecida pelo Vercel
@@ -74,7 +65,10 @@ const videoAulas = [
 
 // Rota para obter os dados combinados
 app.get('/', (req, res) => {
-    const combinedData = {docs_pdf, video_aulas};
+    const combinedData = {
+        docs_pdf: docsPdf, 
+        video_aulas: videoAulas
+    };
 
     res.json(combinedData);
 });
