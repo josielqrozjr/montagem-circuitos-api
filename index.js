@@ -1,6 +1,10 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
 const port = process.env.PORT || 9001; // Use a porta fornecida pelo Vercel
+app.use(cors()); // Adiciona middleware CORS
+
 
 const docsPdf = [
     {
